@@ -1,0 +1,104 @@
+
+/* definicao padrao*/
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* container total da pagina */
+.detalhe-container {
+    padding: 4rem 2rem 2rem 2rem;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f2f5;
+  }
+  
+/* botao de voltar*/
+.voltar-topo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.seta-voltar {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.seta-voltar:hover {
+  transform: scale(1.1);
+}
+  
+  .titulo-cliente {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .cpf-info {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #555;
+  }
+
+  /*grade de informações principais dos clientes */
+  
+  .infos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .info-item {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  }
+  
+  /*tituo de cada bloco de informaçoes dos clientes */
+  .card-titulo {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #444;
+  }
+  
+  .layout-horizontal {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .coluna {
+    flex: 1;
+  }
+  
+  .info-bloco {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    margin-bottom: 1rem;
+  }
+  
+  .grid-info-agencia {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  }
+  
+  /*caso a mensagem seja vazia */
+  .mensagem-vazia {
+    font-style: italic;
+    color: #777;
+  }
+  
