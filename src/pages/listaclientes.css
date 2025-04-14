@@ -1,161 +1,148 @@
-* {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+/* Reset básico */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #f5f7fa;
 }
 
 /* Container principal */
-.p-4 {
-  padding: 20px;
-  background-color: #f8f9fa;
+.conteiner {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 /* Cabeçalho */
 .cabecalho {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 .titulo-centralizado {
-  font-size: 50px;
+  font-size: 3rem;
   color: #004b94;
+
+  margin-bottom: 0.3rem; /* menos espaço abaixo pra aproximar do subtítulo */
 }
 
 .subtitulo {
-  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
   color: #004b94;
+  margin-bottom: 1.5rem; /* espaço abaixo do subtítulo */
+  margin-top: 0; /* remove espaço acima, se tiver */
+  letter-spacing: 0.3px; /* opcional: dá leveza */
 }
 
 /* Barra de pesquisa */
 .barra-pesquisa {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
-  width: 100%;
+  margin-bottom: 2rem;
 }
 
 .campo-pesquisa {
-  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
   width: 100%;
   max-width: 90%;
 }
 
+
 .icone-lupa {
-  position: absolute;
-  top: 50%;
-  left: 12px;
-  transform: translateY(-50%);
   width: 20px;
-  height: 20px;
-  object-fit: contain;
+  margin-right: 0.5rem;
 }
 
-input[type="text"]::placeholder {
-  color: #004b94;
-  opacity: 1; /* Garante que a cor seja totalmente visível */
-}
-
-input[type="text"] {
-  width: 100%;
-  padding: 12px 20px 12px 40px;
-  border: 2px solid #004b94;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-input[type="text"]:focus {
-  border-color: #004b94;
+.campo-pesquisa input {
+  border: none;
   outline: none;
+  width: 100%;
+  font-size: 1rem;
+  color: #004b94; /* azul */
 }
 
-/* Lista de clientes */
-ul {
+/* Estiliza o texto do placeholder dentro do input */
+.campo-pesquisa input::placeholder {
+  color: #1e40af;          /* Cor azul (como você queria antes) */
+  font-style: italic;      
+  font-size: 1rem;         
+  opacity: 1;             
+}
+
+
+
+/* Lista de clientes (grid responsivo) */
+.Cliente-card {
   display: grid;
-  grid-template-columns: repeat(1, 1fr); /* 1 coluna padrão */
-  gap: 20px;
+  grid-template-columns: 1fr;
+  gap: 1rem;
   padding: 0;
   list-style: none;
 }
 
-@media (min-width: 768px) {
-  ul {
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias e maiores */
+@media (min-width: 640px) {
+  .Cliente-card {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-
-/* Cartão do cliente */
-.cartao {
-  background-color: #004b94;
-  padding: 16px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  max-width: 100%;
-}
-
-.cartao:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
+/* Link do cliente (tirando sublinhado) */
 .cliente-link {
   text-decoration: none;
   color: inherit;
 }
 
-.cliente-link:visited {
-  color: inherit;
-  text-decoration: none;
+/* Cartão individual */
+.cartao {
+  background-color: #004b94;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.font-semibold {
-  font-weight: 600;
-  font-size: 1.3rem;
-  color: #d2eefb;
-  margin-bottom: 12px;
+.cartao:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-p {
-  font-size: 0.95rem;
+.cartao h2 {
+  font-size: 1.4rem;
   color: #d2eefb;
-  margin: 2px 0;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+.cartao p {
+  margin: 0.1rem 0;
+  color: #d2eefb;
 }
 
 /* Paginação */
-.flex {
+.paginacao {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin-top: 20px;
+  margin-top: 2rem;
+  gap: 0.5rem;
 }
 
-button {
-  padding: 8px 16px;
-  border-radius: 8px;
-  background-color: #edf2f7;
-  color: #56af31;
-  font-size: 1rem;
+.setpagina {
+  background-color: #56af31;
+  color: #fff;
   border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s;
 }
 
-button:hover {
-  background-color: #56af31;
-  color: #fff;
-}
-
-button.bg-blue-600 {
-  background-color: #56af31;
-  color: #fff;
-}
-
-@media (max-width: 768px) {
-  .titulo-centralizado {
-    font-size: 1.5rem;
-  }
-
-  .font-semibold {
-    font-size: 1.1rem;
-  }
+.setpagina:hover {
+  background-color: #418822;
 }

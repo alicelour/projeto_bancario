@@ -50,7 +50,7 @@ const ListaClientes = () => {
   const clientesPaginados = clientesFiltrados.slice(inicio, inicio + itensPorPagina);
 
   return (
-    <div className="p-4 max-w-4xl mx-auto">
+    <div className="conteiner">
     <header className="cabecalho">
       <h1 className="titulo-centralizado">Sistema de Consulta de Clientes</h1>
       <p className="subtitulo">Acesse os dados bancários dos clientes cadastrados</p>
@@ -73,7 +73,7 @@ const ListaClientes = () => {
     </div>
 
     {/* Lista de Clientes */}
-    <ul className="space-y-4">
+    <ul className="Cliente-card">
       {clientesPaginados.map((cliente) => (
         <Link to={`/cliente/${cliente.id}`} key={cliente.id} className="cliente-link">
           <li className="cartao">
@@ -86,15 +86,12 @@ const ListaClientes = () => {
     </ul>
 
     {/* Paginação */}
-    <div className="flex justify-center gap-2 mt-6">
+    <div className="paginacao">
       {Array.from({ length: totalPaginas }).map((_, index) => (
         <button
           key={index}
           onClick={() => setPaginaAtual(index + 1)}
-          className={`px-3 py-1 rounded ${
-            paginaAtual === index + 1 ? "bg-blue-600 text-white" : "bg-gray-200"
-          }`}
-        >
+          className="setpagina">
           {index + 1}
         </button>
       ))}

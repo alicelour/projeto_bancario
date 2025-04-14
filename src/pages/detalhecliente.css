@@ -4,6 +4,7 @@ html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* container total da pagina */
@@ -82,22 +83,26 @@ html, body, #root {
   
   .info-bloco {
     background-color: #004b94;
-    padding: 1rem;
+    padding: 0.6rem; /* Menor espaçamento interno */
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0,0,0,0.05);
-    margin-bottom: 1rem;
+    margin-bottom: 0.7rem; /* Reduz a distância entre os blocos */
+    color: #d2eefb;
+    font-size: 1.2rem; /* Letra um pouco menor */
+    line-height: 1.4; /* Linhas mais próximas */
   }
   
   .grid-info-agencia {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
     background-color: #004b94;
-    padding: 1rem;
+    color: #d2eefb;
+    padding: 0.5rem; /* Menor espaçamento interno */
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    font-size: 1.2rem; /* Letra menor */
+    line-height: 0.5; /* Espaçamento entre linhas menor */
   }
-  
   /*caso a mensagem seja vazia */
   .mensagem-vazia {
     font-style: italic;
