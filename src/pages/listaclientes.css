@@ -1,174 +1,161 @@
 * {
-    font-family: Arial, sans-serif;
-  }
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
-/* Container principal da lista de clientes */
+/* Container principal */
 .p-4 {
-    padding: 20px;
-    background-color: #f8f9fa;
-  }
-  
-  /* Título da página centralizado */
-  .cabecalho {
-    text-align: center;
-    margin-bottom: 30px;
-    padding: 20px 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
 
-  }
-  
-  .titulo-centralizado {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #092452b5;
-    margin: 0;
-  }
-  
-  .subtitulo {
-    font-size: 1rem;
-    margin-top: 10px;
-    color: #718096;
-  }
-  
-  .divisor {
-    border: none;
-    height: 1px;
-    background-color: #e2e8f0;
-    margin: 20px 0 30px;
-    max-width: 100%;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
-  }
-  
-  
-  /* Caixa de pesquisa com imagem de lupa */
-  .barra-pesquisa {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  input[type="text"] {
-    width: 100%;
-    padding: 12px 20px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem;
-    margin-left: 10px;
-    transition: border-color 0.3s ease;
-  }
-  
-  input[type="text"]:focus {
-    border-color: #3182ce;
-    outline: none;
-  }
-  
-  .lupa {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-  }
-  
-  .icone-lupa {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  /* Listagem de clientes */
-  .space-y-4 {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .cliente-link {
-    text-decoration: none;
-  }
-  
-  li {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    margin-bottom: 16px;
-    border-radius: 12px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
-  }
-  
-li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Aplica a divisão de 2 colunas para a lista */
+/* Cabeçalho */
+.cabecalho {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.titulo-centralizado {
+  font-size: 50px;
+  color: #004b94;
+}
+
+.subtitulo {
+  font-size: 20px;
+  color: #004b94;
+}
+
+/* Barra de pesquisa */
+.barra-pesquisa {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.campo-pesquisa {
+  position: relative;
+  width: 100%;
+  max-width: 90%;
+}
+
+.icone-lupa {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+input[type="text"]::placeholder {
+  color: #004b94;
+  opacity: 1; /* Garante que a cor seja totalmente visível */
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px 12px 40px;
+  border: 2px solid #004b94;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #004b94;
+  outline: none;
+}
+
+/* Lista de clientes */
 ul {
-    column-count: 2;
-    column-gap: 20px; /* Espaço entre as colunas */
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 1 coluna padrão */
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  ul {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias e maiores */
   }
-  
-  /* Nome do cliente */
+}
+
+
+/* Cartão do cliente */
+.cartao {
+  background-color: #004b94;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: 100%;
+}
+
+.cartao:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cliente-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.cliente-link:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.font-semibold {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #d2eefb;
+  margin-bottom: 12px;
+}
+
+p {
+  font-size: 0.95rem;
+  color: #d2eefb;
+  margin: 2px 0;
+}
+
+/* Paginação */
+.flex {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #edf2f7;
+  color: #56af31;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+button:hover {
+  background-color: #56af31;
+  color: #fff;
+}
+
+button.bg-blue-600 {
+  background-color: #56af31;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .titulo-centralizado {
+    font-size: 1.5rem;
+  }
+
   .font-semibold {
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: #2d3748;
-    margin-bottom: 8px;
+    font-size: 1.1rem;
   }
-  
-  /* Estilo para as informações de CPF/CNPJ e Email */
-  p {
-    font-size: 1rem;
-    color: #4a5568;
-    margin: 4px 0;
-  }
-  
-  /* Paginação */
-  .flex {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 20px;
-  }
-  
-  button {
-    padding: 8px 16px;
-    border-radius: 8px;
-    background-color: #edf2f7;
-    color: #4a5568;
-    font-size: 1rem;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease;
-  }
-  
-  button:hover {
-    background-color: #3182ce;
-    color: #fff;
-  }
-  
-  button.bg-blue-600 {
-    background-color: #3182ce;
-    color: #fff;
-  }
-  
-  button.bg-blue-600:hover {
-    background-color: #2b6cb0;
-  }
-  
-  /* Responsividade para dispositivos menores */
-  @media (max-width: 768px) {
-    .p-4 {
-      padding: 16px;
-    }
-  
-    .titulo-centralizado {
-      font-size: 1.25rem;
-    }
-  
-    .font-semibold {
-      font-size: 1rem;
-    }
-  
-    li {
-      padding: 16px;
-    }
-  }
-  
+}

@@ -8,41 +8,42 @@ html, body, #root {
 
 /* container total da pagina */
 .detalhe-container {
-    padding: 4rem 2rem 2rem 2rem;
+    padding: 1rem 2rem 2rem 2rem;
     min-height: 100vh;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
     background-color: #f0f2f5;
   }
-  
-/* botao de voltar*/
-.voltar-topo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+
+/* Remove sublinhado do link */
+.link-voltar {
+  text-decoration: none;
 }
 
-.seta-voltar {
-  width: 30px;
+.seta-voltar-inline {
+  width: 10px; /* Deixando menor que os 30px anteriores */
   height: auto;
+  margin-right: 0.5rem;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
 
-.seta-voltar:hover {
+.titulo-cliente {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #004b94;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Espaço entre a seta e o nome */
+}
+
+.seta-voltar-inline:hover {
   transform: scale(1.1);
 }
   
-  .titulo-cliente {
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-  }
-  
-  .cpf-info {
+.cpf-info {
     font-size: 1.1rem;
     margin-bottom: 2rem;
-    color: #555;
+    color: #004b94;
   }
 
   /*grade de informações principais dos clientes */
@@ -52,6 +53,7 @@ html, body, #root {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-bottom: 2.5rem;
+    color: #004b94;
   }
   
   .info-item {
@@ -65,7 +67,7 @@ html, body, #root {
   .card-titulo {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #444;
+    color: #004b94;
   }
   
   .layout-horizontal {
@@ -79,7 +81,7 @@ html, body, #root {
   }
   
   .info-bloco {
-    background-color: #ffffff;
+    background-color: #004b94;
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0,0,0,0.05);
@@ -90,7 +92,7 @@ html, body, #root {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
-    background-color: #fff;
+    background-color: #004b94;
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0,0,0,0.05);

@@ -45,12 +45,13 @@ const DetalheCliente = () => {
 
   return (
         <div className="detalhe-container">
-            <div className="voltar-topo">
-                <Link to="/">
-                    <img src="/public/voltar.png" alt="Voltar" className="seta-voltar" />
+            <h1 className="titulo-cliente">
+                <Link to="/" className="link-voltar">
+                    <img src="/public/voltar.svg" alt="Voltar" className="seta-voltar-inline" />
                 </Link>
-            </div>
-            <h1 className="titulo-cliente">{cliente.nomeSocial || cliente.nome} </h1>
+                {cliente.nomeSocial || cliente.nome}
+            </h1>
+
             <p className="cpf-info"><strong>CPF/CNPJ:</strong> {formatarCpfCnpj(cliente.cpfCnpj)}</p>
 
             <div className="infos-grid">
