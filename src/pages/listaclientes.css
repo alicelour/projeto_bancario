@@ -11,6 +11,7 @@ html, body, #root {
   max-width: 100%;
   margin: 0 auto;
   padding: 2rem;
+  min-height: auto;
 }
 
 /* Cabeçalho */
@@ -35,6 +36,7 @@ html, body, #root {
   margin-top: 0; /* remove espaço acima, se tiver */
   letter-spacing: 0.3px; /* opcional: dá leveza */
 }
+
 
 /* Barra de pesquisa */
 .barra-pesquisa {
@@ -87,11 +89,6 @@ html, body, #root {
   list-style: none;
 }
 
-@media (min-width: 640px) {
-  .Cliente-card {
-    grid-template-columns: 1fr 1fr;
-  }
-}
 
 /* Link do cliente (tirando sublinhado) */
 .cliente-link {
@@ -147,16 +144,75 @@ html, body, #root {
   background-color: #418822;
 }
 
+
+@media (min-width: 640px) {
+  .Cliente-card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (min-width: 1024px) {
   .Cliente-card {
     grid-template-columns: 1fr 1fr;
   }
-
+  
   .cartao {
     padding: 1.5rem;
   }
-
+  
   .titulo-centralizado {
     font-size: 4rem;
+  }
+}
+
+
+
+
+@media (max-width: 480px) {
+  .conteiner {
+    padding: 1rem;
+  }
+
+  .titulo-centralizado {
+    font-size: 2rem; /* menor */
+    text-align: center;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .campo-pesquisa {
+    padding: 0.3rem 0.8rem;
+  }
+
+  .campo-pesquisa input {
+    font-size: 0.9rem;
+  }
+
+  .icone-lupa {
+    width: 16px;
+  }
+
+  .Cliente-card {
+    gap: 0.5rem;
+  }
+
+  .cartao {
+    padding: 0.8rem;
+  }
+
+  .cartao h2 {
+    font-size: 1.2rem;
+  }
+
+  .cartao p {
+    font-size: 0.95rem;
+  }
+
+  .setpagina {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
   }
 }
