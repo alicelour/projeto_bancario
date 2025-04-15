@@ -146,3 +146,17 @@ html, body, #root {
 .setpagina:hover {
   background-color: #418822;
 }
+
+@media (min-width: 1024px) {
+  .Cliente-card {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cartao {
+    padding: 1.5rem;
+  }
+
+  .titulo-centralizado {
+    font-size: 4rem;
+  }
+}

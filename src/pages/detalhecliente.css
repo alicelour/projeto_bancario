@@ -21,8 +21,7 @@ html, body, #root {
 }
 
 .seta-voltar-inline {
-  width: 10px; /* Deixando menor que os 30px anteriores */
-  height: auto;
+  width: 10px; 
   margin-right: 0.5rem;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -64,7 +63,7 @@ html, body, #root {
     box-shadow: 0 0 5px rgba(0,0,0,0.05);
   }
   
-  /*tituo de cada bloco de informaçoes dos clientes */
+  /*titulo de cada bloco de informaçoes dos clientes */
   .card-titulo {
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -83,13 +82,13 @@ html, body, #root {
   
   .info-bloco {
     background-color: #004b94;
-    padding: 0.6rem; /* Menor espaçamento interno */
+    padding: 0.6rem; /* espaçamento interno */
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0,0,0,0.05);
-    margin-bottom: 0.7rem; /* Reduz a distância entre os blocos */
+    margin-bottom: 0.7rem; /* distância entre os blocos */
     color: #d2eefb;
-    font-size: 1.2rem; /* Letra um pouco menor */
-    line-height: 1.4; /* Linhas mais próximas */
+    font-size: 1.2rem; 
+    line-height: 1.4; /* linhas próximas */
   }
   
   .grid-info-agencia {
@@ -97,15 +96,42 @@ html, body, #root {
     flex-direction: column;
     background-color: #004b94;
     color: #d2eefb;
-    padding: 0.5rem; /* Menor espaçamento interno */
+    padding: 0.5rem; /* espaçamento interno */
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0,0,0,0.05);
-    font-size: 1.2rem; /* Letra menor */
-    line-height: 0.5; /* Espaçamento entre linhas menor */
+    font-size: 1.2rem; 
+    line-height: 0.5; /* espaçamento entre linhas */
   }
   /*caso a mensagem seja vazia */
   .mensagem-vazia {
     font-style: italic;
     color: #777;
   }
+
+  @media (max-width: 768px) {
+    .infos-grid {
+      grid-template-columns: repeat(2, 1fr); /* Reduz para 2 colunas em telas menores */
+    }
   
+    .layout-horizontal {
+      flex-direction: column; /* Empilha as colunas */
+    }
+  
+    .titulo-cliente {
+      font-size: 1.8rem; /* Reduz o tamanho da fonte em telas pequenas */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .infos-grid {
+      grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+    }
+  
+    .campo-pesquisa input {
+      width: 100%; /* Faz o campo de pesquisa ocupar toda a largura */
+    }
+  
+    .titulo-cliente {
+      font-size: 1.5rem; /* Ajusta o título para ser mais legível */
+    }
+  }

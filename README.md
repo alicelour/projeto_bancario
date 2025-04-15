@@ -1,54 +1,73 @@
-# React + TypeScript + Vite
+# 💼 Sistema de Visualização de Clientes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um projeto desenvolvido com **React + TypeScript + Vite** que exibe dados de clientes, contas bancárias e agências a partir de arquivos CSV hospedados no Google Sheets.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [React](https://reactjs.org/)
 
-## Expanding the ESLint configuration
+- [TypeScript](https://www.typescriptlang.org/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [Vite](https://vitejs.dev/)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- [React Router](https://reactrouter.com/) (para navegação)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Google Sheets como base de dados em tempo real
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📁 Estrutura do Projeto 
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+src/ 
+
+├── pages/ # Páginas principais (Lista de Clientes, Detalhes do Cliente) 
+
+├── services/ # Funções para carregar dados dos CSVs 
+
+├── types/ # Interfaces TypeScript (Cliente, Conta, Agência) 
+
+├── utils/ # Funções auxiliares como o parser de CSV e o normalizador
+
+├── App.tsx 
+
+└── main.tsx 
+
+## 📊 Funcionalidades
+
+- 🔍 Busca por nome ou CPF/CNPJ
+
+- 📄 Exibição de informações detalhadas por cliente
+
+- 🧮 Relação com contas bancárias e agência correspondente
+
+- 📑 Paginação dos resultados
+
+- 📥 Leitura de dados a partir de planilhas do Google (em formato CSV)
+
+## 🔧 Como rodar o projeto localmente
+
+**1. Clone o repositório:**
+
+```bash
+git clone https://github.com/alicelour/projeto_bancario.git
+cd projeto_bancario
+
+**2. Instale as dependências:**
+
+npm install
+# ou
+yarn
+
+**3. Inicie o servidor de desenvolvimento:**
+
+npm run dev
+# ou
+yarn dev
+
+**4. Abra no navegador:**
+
+ Acesse http://localhost:5173
+
+##  Configurações
+Certifique-se de que os links dos CSVs estejam atualizados no arquivo:
+
+src/services/api.ts
+
