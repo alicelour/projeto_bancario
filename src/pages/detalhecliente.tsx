@@ -34,7 +34,7 @@ const DetalheCliente = () => {
               (ag) => ag.codigo === clienteEncontrado.codigoAgencia
             );
             
-            // Verificar se foi encontrada uma agência e atualize o estado
+            // Verificar se foi encontrada uma agência e atualize o estado 
             setAgencia(agenciaDoCliente || null);
 
             // Carregar todas as contas e filtrar as do cliente
