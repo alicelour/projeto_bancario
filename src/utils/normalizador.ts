@@ -1,6 +1,6 @@
 import { Cliente, Conta, Agencia } from "../types/interfaces";
 
-
+//retirada de erros e passando para numero no momento de fazer o parse
 const parseValor = (valor: string | number): number => {
   if (typeof valor === "number") return valor;
 
@@ -13,6 +13,7 @@ const parseValor = (valor: string | number): number => {
   );
 };
 
+//como todos os valores vem em string, transformo para float, int e date os necessarios
 export function normalizarCliente(item: any): Cliente {
   return {
     ...item,
@@ -54,6 +55,7 @@ export function formatarCpfCnpj(valor: string): string {
     return valor;
   }
 
+  //normalizando string
   export function normalize(str: string): string {
     return str?.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase() || "";
   }

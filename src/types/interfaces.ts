@@ -30,13 +30,3 @@ export interface Cliente {
   }
   
 
-  function normalizarCliente(item: any): Cliente {
-    return {
-      ...item,
-      dataNascimento: new Date(item.dataNascimento),
-      rendaAnual: parseFloat(item.rendaAnual),
-      patrimonio: parseFloat(item.patrimonio),
-      codigoAgencia: parseInt(item.codigoAgencia),
-    };
-  }
-  

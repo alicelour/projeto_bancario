@@ -48,18 +48,20 @@ src/
 
 ```bash
 git clone https://github.com/alicelour/projeto_bancario.git
+
 cd projeto_bancario
+```
 
 **2. Instale as dependências:**
 
-npm install
-# ou
+npm install 
+**ou**
 yarn
 
 **3. Inicie o servidor de desenvolvimento:**
 
 npm run dev
-# ou
+**ou**
 yarn dev
 
 **4. Abra no navegador:**
@@ -70,4 +72,3 @@ yarn dev
 Certifique-se de que os links dos CSVs estejam atualizados no arquivo:
 
 src/services/api.ts
-
