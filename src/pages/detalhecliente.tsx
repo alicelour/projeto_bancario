@@ -46,12 +46,10 @@ const DetalheCliente = () => {
           
           };
           
-
         carregarDados();
     }, [id]);
 
     if (!cliente) return <div className="p-4">Carregando cliente...</div>;
-
 
     //retorna a tela
     return (
@@ -67,10 +65,11 @@ const DetalheCliente = () => {
                 </Link>
                 {cliente.nomeSocial || cliente.nome} 
             </h1>
-
+            
+            {/*cpf*/}
             <p className="cpf-info"><strong>CPF/CNPJ:</strong> {formatarCpfCnpj(cliente.cpfCnpj)}</p>
             
-
+            {/*area informações abaixo do cpf */}
             <div className="infos-grid">
                 <div className="info-item"><strong>Data de Nascimento:</strong><br /> {cliente.dataNascimento.toLocaleDateString()}</div>
                 <div className="info-item"><strong>Email:</strong><br /> {cliente.email}</div>
@@ -94,6 +93,7 @@ const DetalheCliente = () => {
                         </div>
                         ))
                     ) : (
+                        
                         <p className="mensagem-vazia">Nenhuma conta encontrada.</p>
                     )}
                 </div>
