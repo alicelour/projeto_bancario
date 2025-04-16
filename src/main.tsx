@@ -18,7 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/cliente/:id" element={<DetalheCliente />} />
         
         {/* Rota genérica */}
-        <Route path="*" element={<Navigate to="ListaClientes"/>} />
+        <Route path="*" element={<Navigate to="/ListaClientes"/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
