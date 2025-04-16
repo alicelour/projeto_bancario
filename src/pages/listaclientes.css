@@ -80,6 +80,7 @@ html, body, #root {
 
 
 
+
 /* Lista de clientes (grid responsivo) */
 .Cliente-card {
   display: grid;
@@ -106,8 +107,8 @@ html, body, #root {
 }
 
 .cartao:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0,0,0,1);
 }
 
 .cartao h2 {
@@ -142,6 +143,12 @@ html, body, #root {
 
 .setpagina:hover {
   background-color: #418822;
+}
+
+.setpagina.ativa {
+  background-color: #2e6c14; /* verde mais escuro */
+  font-weight: bold;
+  box-shadow: 0 0 0 2px #d8ffd1 inset;
 }
 
 

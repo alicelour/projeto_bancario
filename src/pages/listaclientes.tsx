@@ -36,20 +36,24 @@ const ListaClientes = () => {
     carregarDados();
   }, []);
 
-
-  const clientesFiltrados = clientes.filter((cliente) => {
-    //normalizando o filtro de busca da pagina
+  //normaliza o nome buscado, retirando acentos e maiusculas para a comparação ser eficiente
+  const clientesFiltrados = clientes
+  .filter((cliente) => {
     const filtroNormalizado = normalize(filtro);
-    //comparando com o nome
     const nomeExibido = normalize(cliente.nomeSocial || cliente.nome);
-  
+
+    //garante que os clientes tenham o inicio do nome ou do cpf de acordo com as letras digitadas pelo usuário
     return (
-      //pegando pelo inicio da palavra
       nomeExibido.startsWith(filtroNormalizado) ||
-      //opçao de procurar e=pelo cpf ou cnpj
-      cliente.cpfCnpj.includes(filtro)
+      cliente.cpfCnpj.startsWith(filtro)
     );
+  })
+  .sort((a, b) => {
+    const nomeA = normalize(a.nomeSocial || a.nome);
+    const nomeB = normalize(b.nomeSocial || b.nome);
+    return nomeA.localeCompare(nomeB); // ordenação alfabética
   });
+
   
   
   //calcula quantas paginas vao ser mostradas de acordo com a quantidade de clientes (quantidade de clientes pela quantidade de clientes por pagina)
@@ -108,9 +112,9 @@ const ListaClientes = () => {
         <button
           key={index}
           onClick={() => setPaginaAtual(index + 1)}
-          className="setpagina">
+          className={`setpagina ${paginaAtual === index + 1 ? "ativa" : ""}`}>
           {index + 1}
-        </button>
+      </button>
       ))}
     </div>
   </div>
