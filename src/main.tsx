@@ -1,7 +1,7 @@
 
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 import ListaClientes from "./pages/listaclientes";
 import DetalheCliente from "./pages/detalhecliente";
 
@@ -18,7 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/cliente/:id" element={<DetalheCliente />} />
         
         {/* Rota genérica */}
-        <Route path="*" element={<h1>Página não encontrada</h1>} />
+        <Route path="*" element={<Navigate to="ListaClientes"/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
