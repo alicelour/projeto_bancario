@@ -61,7 +61,9 @@ const DetalheCliente = () => {
             lembrando de dar prioridade para o nome socia caso tiver*/}
             <h1 className="titulo-cliente">
                 <Link to="/" className="link-voltar">
-                    <img src="/public/voltar.svg" alt="Voltar" className="seta-voltar-inline" />
+                    
+                    <img src={import.meta.env.BASE_URL + "/public/voltar.svg"} alt="Voltar" className="seta-voltar-inline" />
+
                 </Link>
                 {cliente.nomeSocial || cliente.nome} 
             </h1>

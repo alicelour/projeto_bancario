@@ -79,7 +79,8 @@ const ListaClientes = () => {
     {/* Barra de Pesquisa */}
     <div className="barra-pesquisa">
       <div className="campo-pesquisa">
-        <img src="/public/lupa.png" alt="Ícone de lupa" className="icone-lupa" />
+        
+        <img src={import.meta.env.BASE_URL + "/public/lupa.png"} alt="Ícone de lupa" className="icone-lupa" />
         <input
           type="text"
           placeholder="Buscar por nome ou CPF/CNPJ"
